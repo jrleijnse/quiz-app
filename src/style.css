@@ -1,0 +1,44 @@
+/* -------------------- CSS RESET ------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* prettier-ignore */
+img, picture, video, canvas, svg {
+  display: block;
+}
+
+/* prettier-ignore */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* prettier-ignore */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* -------------------- CSS RESET ------------------ *//*# sourceMappingURL=style.css.map */
