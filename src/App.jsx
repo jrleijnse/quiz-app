@@ -1,7 +1,11 @@
+import { useState } from "react";
+
 export default function App() {
+  const [gameStarted, setGameStarted] = useState(true);
+
   return (
-    <>
-      <h1>This is the app component</h1>
-    </>
+    <main>
+      {gameStarted ? <h1>Game has not started</h1> : <h1>Game has started</h1>}
+    </main>
   );
 }
