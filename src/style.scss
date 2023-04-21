@@ -42,10 +42,10 @@ p, h1, h2, h3, h4, h5, h6 {
 #__next {
   isolation: isolate;
 }
-/* -------------------- CSS RESET ------------------ */
 
+/* -------------------- STARTSCREEN------------------ */
 .quiz-title {
-  font-family: "Karla", sans-serif;
+  font-family: "Karla";
   line-height: 1.2;
   margin-bottom: 0.7rem;
   color: #293264;
@@ -65,6 +65,47 @@ p, h1, h2, h3, h4, h5, h6 {
   height: 52px;
   border-radius: 15px;
   cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-start:hover {
+  background: #6273c8;
+}
+
+/* -------------------- QUIZZ QUESTIONS ------------------ */
+.question-container {
+  width: fit-content;
+  height: fit-content;
+  margin: 15px 0px;
+
+  .question {
+    margin-bottom: 11px;
+    font-family: "Karla";
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #293264;
+  }
+
+  .answer-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 13px;
+    width: 400px;
+
+    .answer {
+      border: 0.794239px solid #4d5b9e;
+      width: fit-content;
+      padding: 0 15px;
+      margin-bottom: 15px;
+      height: 20.65px;
+      line-height: 0;
+      border-radius: 7.94239px;
+      font-size: 10.24px;
+      color: #293264;
+      cursor: pointer;
+    }
+  }
 }
 
 /* -------------------- HELPER CLASSES ------------------ */
@@ -77,6 +118,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
   width: 550px;
   height: 550px;
+  padding: 40px 75px 25px 75px;
   background-color: #f5f7fb;
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
   border-radius: 10px;
@@ -92,4 +134,13 @@ p, h1, h2, h3, h4, h5, h6 {
     top: 0%;
     right: 0%;
   }
+}
+
+.selected {
+  background: #d6dbf5;
+  border: none !important;
+}
+
+.line {
+  border: 1px solid #dbdef0a4;
 }
