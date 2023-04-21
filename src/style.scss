@@ -10,16 +10,18 @@
   padding: 0;
 }
 
-// main {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100vh;
-//   font-family: "Inter", sans-serif;
-//   line-height: 1.5;
-//   -webkit-font-smoothing: antialiased;
-// }
+main {
+  display: flex;
+  background-color: #bac8ff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
 
 /* prettier-ignore */
 img, picture, video, canvas, svg {
@@ -41,3 +43,53 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 /* -------------------- CSS RESET ------------------ */
+
+.quiz-title {
+  font-family: "Karla", sans-serif;
+  line-height: 1.2;
+  margin-bottom: 0.7rem;
+  color: #293264;
+}
+
+.start-description {
+  line-height: 19px;
+  color: #293264;
+  margin-bottom: 29px;
+}
+
+.btn-start {
+  border: none;
+  background: #4d5b9e;
+  color: #f5f7fb;
+  width: 193px;
+  height: 52px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+/* -------------------- HELPER CLASSES ------------------ */
+.flex-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 550px;
+  height: 550px;
+  background-color: #f5f7fb;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 10px;
+  overflow: hidden;
+
+  .blueblob {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+  }
+  .yellowblob {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+  }
+}
