@@ -13,7 +13,9 @@ export default function App() {
         <div className="flex-container">
           <h1 className="quiz-title">Quizzical</h1>
           <span className="start-description">Some description if needed</span>
-          <button className="btn-start">Start Quiz</button>
+          <button className="btn-start" onClick={() => setGameStarted(true)}>
+            Start Quiz
+          </button>
           <img className="blueblob" src={BlueBlob} />
           <img className="yellowblob" src={YellowBlob} />
         </div>
