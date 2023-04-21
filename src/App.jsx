@@ -8,7 +8,11 @@ export default function App() {
   return (
     <main>
       {gameStarted ? (
-        <div className="flex-container">Questions</div>
+        <div className="flex-container">
+          <img className="blueblob" src={BlueBlob} />
+          <img className="yellowblob" src={YellowBlob} />
+          <h1>Questions</h1>
+        </div>
       ) : (
         <div className="flex-container">
           <h1 className="quiz-title">Quizzical</h1>
