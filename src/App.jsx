@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import Question from "./components/question";
+import SmallBlueBlob from "./assets/blobbluesmall.svg";
 import BlueBlob from "./assets/blobblue.svg";
 import YellowBlob from "./assets/blobyellow.svg";
+import SmallYellowBlob from "./assets/blobyellowsmall.svg";
+import { nanoid } from "nanoid";
 
 export default function App() {
   const [gameStarted, setGameStarted] = useState(false);
@@ -13,18 +16,16 @@ export default function App() {
       .then((data) => setQuestions(data.results));
   }, []);
 
-  console.log(questions);
-
   const questionElements = questions.map((question) => {
-    return <Question question={question} />;
+    return <Question question={question} key={nanoid()} />;
   });
 
   return (
     <main>
       {gameStarted ? (
         <div className="flex-container">
-          <img className="blueblob" src={BlueBlob} />
-          <img className="yellowblob" src={YellowBlob} />
+          <img className="blueblob" src={SmallBlueBlob} />
+          <img className="yellowblob" src={SmallYellowBlob} />
           {questionElements}
         </div>
       ) : (
