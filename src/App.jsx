@@ -13,12 +13,30 @@ export default function App() {
   useEffect(() => {
     fetch("https://opentdb.com/api.php?amount=5")
       .then((response) => response.json())
-      .then((data) => setQuestions(data.results));
+      .then((data) =>
+        setQuestions(
+          data.results.map((question) => {
+            return {
+              ...question,
+              isSelected: false,
+              id: nanoid(),
+            };
+          })
+        )
+      );
   }, []);
 
   const questionElements = questions.map((question) => {
-    return <Question key={nanoid()} question={question} />;
+    return (
+      <Question
+        key={question.id}
+        question={question}
+        isSelected={question.isSelected}
+      />
+    );
   });
+
+  console.log(questions);
 
   return (
     <main>
