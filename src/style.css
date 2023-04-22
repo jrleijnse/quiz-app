@@ -108,6 +108,9 @@ p, h1, h2, h3, h4, h5, h6 {
   color: #293264;
   cursor: pointer;
 }
+.question-container .answer-container .answer:hover {
+  background: rgba(214, 219, 245, 0.3019607843);
+}
 
 /* -------------------- HELPER CLASSES ------------------ */
 .flex-container {
