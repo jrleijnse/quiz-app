@@ -1,14 +1,19 @@
 import he from "he";
+import { nanoid } from "nanoid";
 
 export default function Question(props) {
   const { question, correct_answer, incorrect_answers } = props.question;
 
   const incorrectAnswers = incorrect_answers.map((answer) => {
-    return <button className="answer">{correctStrings(answer)}</button>;
+    return (
+      <button key={nanoid()} className="answer">
+        {correctStrings(answer)}
+      </button>
+    );
   });
 
   const correctAnswer = (
-    <button className="answer selected">
+    <button key={nanoid()} className="answer selected">
       {correctStrings(correct_answer)}
     </button>
   );
