@@ -17,7 +17,7 @@ export default function App() {
   }, []);
 
   const questionElements = questions.map((question) => {
-    return <Question question={question} key={nanoid()} />;
+    return <Question question={question} />;
   });
 
   return (
