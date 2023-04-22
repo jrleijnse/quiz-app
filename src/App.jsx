@@ -27,12 +27,16 @@ export default function App() {
           <img className="blueblob" src={SmallBlueBlob} />
           <img className="yellowblob" src={SmallYellowBlob} />
           {questionElements}
+          <button className="btn btn-check">Check Answers</button>
         </div>
       ) : (
         <div className="flex-container">
           <h1 className="quiz-title">Quizzical</h1>
           <span className="start-description">Some description if needed</span>
-          <button className="btn-start" onClick={() => setGameStarted(true)}>
+          <button
+            className="btn btn-start"
+            onClick={() => setGameStarted(true)}
+          >
             Start Quiz
           </button>
           <img className="blueblob" src={BlueBlob} />
