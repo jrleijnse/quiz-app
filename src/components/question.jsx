@@ -1,19 +1,20 @@
 import he from "he";
 import { nanoid } from "nanoid";
+import { useState } from "react";
 
 export default function Question(props) {
   const { question, correct_answer, incorrect_answers } = props.question;
 
   const incorrectAnswers = incorrect_answers.map((answer) => {
     return (
-      <button key={nanoid()} className="answer">
+      <button key={nanoid()} id={nanoid()} className="answer">
         {correctStrings(answer)}
       </button>
     );
   });
 
   const correctAnswer = (
-    <button key={nanoid()} className="answer selected">
+    <button key={nanoid()} id={nanoid()} className="answer answer-correct">
       {correctStrings(correct_answer)}
     </button>
   );
