@@ -110,14 +110,17 @@ p, h1, h2, h3, h4, h5, h6 {
 
     #correct.answer {
       background: #94d7a2d5 !important;
+      border: 0.794239px solid #94d7a2d5 !important;
     }
 
     #incorrect.answer.selected {
       background: #f8bcbc !important;
+      border: 0.794239px solid #f8bcbc !important;
     }
 
     #not-selected.answer {
       color: rgba(41, 50, 100, 0.4) !important;
+      border: 0.794239px solid rgba(41, 50, 100, 0.4) !important;
     }
 
     .answer:hover {
