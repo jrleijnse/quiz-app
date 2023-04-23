@@ -1,22 +1,55 @@
-import he from "he";
 import { nanoid } from "nanoid";
-import { useState } from "react";
 
 export default function Question(props) {
+  const answerList = props.question.answers;
+  console.log(answerList);
+
+  function handleClick(answer) {
+    if (props.question.checked) {
+      return;
+    }
+    props.handleClickAnswer(props.id, answer);
+  }
+
+  const answerElements = answerList.map((answer) => {
+    let id = null;
+    if (props.question.checked) {
+      if (props.question.correct == answer) {
+        id = "correct";
+      } else if (props.question.selected === answer) {
+        id = "incorrect";
+      } else {
+        id = "not-selected";
+      }
+    }
+    return (
+      <button
+        key={nanoid()}
+        id={id}
+        className={
+          answer === props.question.selected ? "answer selected" : "answer"
+        }
+        onClick={() => handleClick(answer)}
+      >
+        {props.correctStrings(answer)}
+      </button>
+    );
+  });
+
   return (
     <div className="question-container">
-      <h2 className="question">Question 1</h2>
-      <div className="answer-container">
-        <button className="answer">Answer</button>
-        <button className="answer">Answer</button>
-        <button className="answer">Answer</button>
-        <button className="answer">Answer</button>
-        <button className="answer">Answer</button>
-      </div>
+      <h2 className="question">{props.question.question}</h2>
+      <div className="answer-container">{answerElements}</div>
       <div className="line" />
     </div>
   );
 }
+
+// const styles = {
+//   backgroundColor: props.isSelected ? "Red" : "white",
+// };
+
+// const answerList = [props.correctAnswer, ...props.incorrectAnswers];
 
 // const { question, correct_answer, incorrect_answers } = props.question;
 
@@ -35,18 +68,3 @@ export default function Question(props) {
 // );
 
 // const answerOptions = [...incorrectAnswers, correctAnswer];
-
-// function correctStrings(string) {
-//   return he.decode(string);
-// }
-
-// // Shuffle array using the Fisher-Yates Algorithm
-// function shuffleArray(array) {
-//   for (let i = array.length - 1; i > 0; i--) {
-//     const j = Math.floor(Math.random() * (i + 1));
-//     const temp = array[i];
-//     array[i] = array[j];
-//     array[j] = temp;
-//     return array;
-//   }
-// }
