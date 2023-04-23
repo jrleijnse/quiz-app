@@ -20,8 +20,8 @@ export default function Question(props) {
       } else {
         id = "not-selected";
       }
-      console.log(id);
     }
+
     return (
       <button
         key={nanoid()}
