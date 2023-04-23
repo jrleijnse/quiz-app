@@ -97,7 +97,6 @@ export default function App() {
 
   // Create list of questions
   const questionElements = questions.map((question) => {
-    console.log(question);
     return (
       <Question
         key={question.id}

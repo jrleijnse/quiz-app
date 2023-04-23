@@ -2,7 +2,6 @@ import { nanoid } from "nanoid";
 
 export default function Question(props) {
   const answerList = props.question.answers;
-  console.log(answerList);
 
   function handleClick(answer) {
     if (props.question.checked) {
@@ -14,13 +13,14 @@ export default function Question(props) {
   const answerElements = answerList.map((answer) => {
     let id = null;
     if (props.question.checked) {
-      if (props.question.correct == answer) {
+      if (props.question.correct === answer) {
         id = "correct";
       } else if (props.question.selected === answer) {
         id = "incorrect";
       } else {
         id = "not-selected";
       }
+      console.log(id);
     }
     return (
       <button
