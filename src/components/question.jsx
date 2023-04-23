@@ -44,27 +44,3 @@ export default function Question(props) {
     </div>
   );
 }
-
-// const styles = {
-//   backgroundColor: props.isSelected ? "Red" : "white",
-// };
-
-// const answerList = [props.correctAnswer, ...props.incorrectAnswers];
-
-// const { question, correct_answer, incorrect_answers } = props.question;
-
-// const incorrectAnswers = incorrect_answers.map((answer) => {
-//   return (
-//     <button key={nanoid()} id={nanoid()} className="answer">
-//       {correctStrings(answer)}
-//     </button>
-//   );
-// });
-
-// const correctAnswer = (
-//   <button key={nanoid()} id={nanoid()} className="answer answer-correct">
-//     {correctStrings(correct_answer)}
-//   </button>
-// );
-
-// const answerOptions = [...incorrectAnswers, correctAnswer];
