@@ -89,6 +89,7 @@ export default function App() {
     );
   }
 
+  // Load new quiz after game is finished
   function handlePlayAgain() {
     setCount((count) => count + 1);
     setChecked(false);
