@@ -10,7 +10,7 @@ import he from "he";
 export default function App() {
   const [gameStarted, setGameStarted] = useState(false);
   const [count, setCount] = useState(0);
-  const [correct, setCorrect] = useState(0);
+  // const [correct, setCorrect] = useState(0);
   const [checked, setChecked] = useState(false);
   const [questions, setQuestions] = useState([]);
 
@@ -30,7 +30,7 @@ export default function App() {
     return he.decode(string);
   }
 
-  // Set the questions state to the following data
+  // Set the questions state to the following data and generate new questions whenever the count state changes (this happens whenever pressing the "Check Answers" button)
   useEffect(() => {
     fetch("https://opentdb.com/api.php?amount=5")
       .then((response) => response.json())
@@ -73,14 +73,14 @@ export default function App() {
     );
 
     setChecked(true);
-    let correct = 0;
+    // let correct = 0;
 
-    questions.map((question) => {
-      if (question.correct === question.selected) {
-        correct += 1;
-      }
-    });
-    setCorrect(correct);
+    // questions.map((question) => {
+    //   if (question.correct === question.selected) {
+    //     correct += 1;
+    //   }
+    // });
+    // setCorrect(correct);
   }
 
   function handleClickAnswer(id, answer) {
