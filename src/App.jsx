@@ -64,13 +64,16 @@ export default function App() {
     if (!selected) {
       return;
     }
+
     setQuestions((questions) =>
       questions.map((question) => {
         return { ...question, checked: true };
       })
     );
+
     setChecked(true);
     let correct = 0;
+
     questions.map((question) => {
       if (question.correct === question.selected) {
         correct += 1;
