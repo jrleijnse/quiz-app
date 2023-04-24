@@ -10,6 +10,7 @@ export default function Question(props) {
     props.handleClickAnswer(props.id, answer);
   }
 
+  // Map over the list of answers and set the id based on if the answer is correct, incorrect or not selected
   const answerElements = answerList.map((answer) => {
     let id = null;
     if (props.question.checked) {

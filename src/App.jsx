@@ -25,6 +25,7 @@ export default function App() {
     }
   }
 
+  // Fix the strings returned by the API
   function correctStrings(string) {
     return he.decode(string);
   }
