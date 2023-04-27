@@ -125,10 +125,10 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .score-container {
-  transition-property: all;
+  transition: all 0.3s;
 }
 .score-container .score {
-  transition-property: all;
+  transition: all 0.3s;
   margin-right: 1rem;
   font-weight: 700;
   font-size: 12.8px;

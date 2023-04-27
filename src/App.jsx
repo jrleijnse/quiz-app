@@ -118,7 +118,12 @@ export default function App() {
           {questionElements}
           <div className="score-container">
             {checked && (
-              <span className="score">You scored 3/5 correct answers</span>
+              <span
+                style={{ display: checked ? "inlineBlock" : "none" }}
+                className="score"
+              >
+                You scored {correct}/5 correct answers
+              </span>
             )}
             <button
               onClick={checked ? handlePlayAgain : handleCheck}
