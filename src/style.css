@@ -124,6 +124,17 @@ p, h1, h2, h3, h4, h5, h6 {
   background: rgba(214, 219, 245, 0.3019607843);
 }
 
+.score-container {
+  transition-property: all;
+}
+.score-container .score {
+  transition-property: all;
+  margin-right: 1rem;
+  font-weight: 700;
+  font-size: 12.8px;
+  color: #293264;
+}
+
 /* -------------------- HELPER CLASSES ------------------ */
 .flex-container {
   position: relative;

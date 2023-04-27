@@ -10,7 +10,7 @@ import he from "he";
 export default function App() {
   const [gameStarted, setGameStarted] = useState(false);
   const [count, setCount] = useState(0);
-  // const [correct, setCorrect] = useState(0);
+  const [correct, setCorrect] = useState(0);
   const [checked, setChecked] = useState(false);
   const [questions, setQuestions] = useState([]);
 
@@ -25,12 +25,11 @@ export default function App() {
     }
   }
 
-  // Fix the strings returned by the API
   function correctStrings(string) {
     return he.decode(string);
   }
 
-  // Set the questions state to the following data and generate new questions whenever the count state changes (this happens whenever pressing the "Check Answers" button)
+  // Set the questions state to the following data
   useEffect(() => {
     fetch("https://opentdb.com/api.php?amount=5")
       .then((response) => response.json())
@@ -65,22 +64,19 @@ export default function App() {
     if (!selected) {
       return;
     }
-
     setQuestions((questions) =>
       questions.map((question) => {
         return { ...question, checked: true };
       })
     );
-
     setChecked(true);
-    // let correct = 0;
-
-    // questions.map((question) => {
-    //   if (question.correct === question.selected) {
-    //     correct += 1;
-    //   }
-    // });
-    // setCorrect(correct);
+    let correct = 0;
+    questions.map((question) => {
+      if (question.correct === question.selected) {
+        correct += 1;
+      }
+    });
+    setCorrect(correct);
   }
 
   function handleClickAnswer(id, answer) {
@@ -120,12 +116,17 @@ export default function App() {
           <img className="blueblob" src={SmallBlueBlob} />
           <img className="yellowblob" src={SmallYellowBlob} />
           {questionElements}
-          <button
-            onClick={checked ? handlePlayAgain : handleCheck}
-            className="btn btn-check"
-          >
-            {checked ? "Play Again" : "Check Answers"}
-          </button>
+          <div className="score-container">
+            {checked && (
+              <span className="score">You scored 3/5 correct answers</span>
+            )}
+            <button
+              onClick={checked ? handlePlayAgain : handleCheck}
+              className="btn btn-check"
+            >
+              {checked ? "Play Again" : "Check Answers"}
+            </button>
+          </div>
         </div>
       ) : (
         <div className="flex-container">
