@@ -107,12 +107,7 @@ export default function App() {
       />
     );
   });
-  useEffect(() => {
-    const scoreElem = document.querySelector(".score");
-    if (scoreElem) {
-      setTimeout(() => scoreElem.classList.toggle("score-show"), 0);
-    }
-  }, [checked]);
+
   // Conditionally render the startscreen or list of questions
   return (
     <main>
@@ -122,7 +117,7 @@ export default function App() {
           <img className="yellowblob" src={SmallYellowBlob} />
           {questionElements}
           <div className="score-container">
-            <span className="score">
+            <span className={`score ${checked ? "show" : ""}`}>
               You scored {correct}/5 correct answers
             </span>
 
