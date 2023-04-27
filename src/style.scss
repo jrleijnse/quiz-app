@@ -63,14 +63,25 @@ p, h1, h2, h3, h4, h5, h6 {
   border-radius: 15px;
 }
 
-.btn-check {
-  width: 120px;
-  min-height: 35px;
-  font-weight: 600;
-  font-size: 10.24px;
-  color: #f5f7fb;
+.score-container {
+  display: flex;
+  align-items: center;
   margin-top: 5px;
-  border-radius: 10px;
+
+  .score {
+    margin-right: 1rem;
+    font-weight: 700;
+    font-size: 12.8px;
+    color: #293264;
+  }
+  .btn-check {
+    width: 120px;
+    min-height: 35px;
+    font-weight: 600;
+    font-size: 10.24px;
+    color: #f5f7fb;
+    border-radius: 10px;
+  }
 }
 
 /* -------------------- QUIZZ QUESTIONS ------------------ */
@@ -127,19 +138,6 @@ p, h1, h2, h3, h4, h5, h6 {
       background: #d6dbf54d;
     }
   }
-}
-
-.score {
-  transition: display 1s ease-in-out;
-  display: none;
-  margin-right: 1rem;
-  font-weight: 700;
-  font-size: 12.8px;
-  color: #293264;
-}
-
-.score-show {
-  display: inline-block;
 }
 
 /* -------------------- HELPER CLASSES ------------------ */

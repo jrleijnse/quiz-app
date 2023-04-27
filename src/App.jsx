@@ -117,10 +117,11 @@ export default function App() {
           <img className="yellowblob" src={SmallYellowBlob} />
           {questionElements}
           <div className="score-container">
-            <span className={`score ${checked ? "show" : ""}`}>
-              You scored {correct}/5 correct answers
-            </span>
-
+            {checked && (
+              <span className="score">
+                You scored {correct}/5 correct answers
+              </span>
+            )}
             <button
               onClick={checked ? handlePlayAgain : handleCheck}
               className="btn btn-check"
